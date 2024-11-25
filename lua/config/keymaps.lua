@@ -1,6 +1,10 @@
 local opts = { noremap = true, silent = true }
 local map = vim.keymap.set
 
+-- Set <leader> key
+vim.g.mapleader = " "
+vim.g.localleader = "\\"
+
 -- Remap hjkl to jkl;
 map("", ";", "l", opts)
 map("", "l", "k", opts)
@@ -27,4 +31,34 @@ map("n", "<leader>bk", ":bdelete<cr>", opts)
 map("n", "<leader>pv", ":Ex<cr>", opts)
 map("n", "<leader>qq", ":q<cr>", opts)
 map("n", "<leader>qw", ":qw<cr>", opts)
-map("n", "<leader>q!", ":q1<cr>", opts)
+map("n", "<leader>q1", ":q!<cr>", opts)
+map("n", "<leader>ww", ":w<cr>", opts)
+map("n", "<leader><leader>", ":so<cr>", opts)
+
+map("v", "K", ":m '>+1<cr>gv=gv", opts)
+map("v", "L", ":m '<-2<cr>gv=gv", opts)
+
+map("n", "Y", "yg$", opts)
+map("n", "J", "mzJ`z", opts)
+
+map("x", "<leader>p", "\"_dP", opts)
+map("n", "<leader>y", "\"+y", opts)
+map("v", "<leader>y", "\"+y", opts)
+map("n", "<leader>Y", "\"+Y", opts)
+map("n", "<leader>d", "\"_d", opts)
+map("v", "<leader>d", "\"_d", opts)
+
+map("n", "Q", "<nop>", opts)
+
+map("n", "<C-f>", ":silent !tmux neww tmux-sessionizer<cr>", opts)
+
+map("n", "<C-k>", ":cnext<cr>", opts)
+map("n", "<C-l>", ":cprev<cr>", opts)
+map("n", "<leader>k", ":lnext<cr>", opts)
+map("n", "<leader>l", ":lprev<cr>", opts)
+
+map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
+map("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
+map("n", "<leader>lr", "<cmd>LspRestart<cr>")
+map("n", "<leader>f", vim.lsp.buf.format)
