@@ -24,8 +24,6 @@ map("n", "<C-Right>", ":vertical resize +3<cr>", opts)
 map("n", "<C-Left>", ":vertical resize -3<cr>", opts)
 
 -- Easier buffer navigation
-map("n", "K", ":bnext<cr>", opts)
-map("n", "L", ":bprevious<cr>", opts)
 map("n", "<leader>bk", ":bdelete<cr>", opts)
 
 map("n", "<leader>pv", ":Ex<cr>", opts)
@@ -52,12 +50,12 @@ map("n", "Q", "<nop>", opts)
 
 map("n", "<C-f>", ":silent !tmux neww tmux-sessionizer<cr>", opts)
 
-map("n", "<C-k>", ":cnext<cr>", opts)
-map("n", "<C-l>", ":cprev<cr>", opts)
-map("n", "<leader>k", ":lnext<cr>", opts)
-map("n", "<leader>l", ":lprev<cr>", opts)
+map("n", "<C-n>", ":cnext<cr>")
+map("n", "<C-p>", ":cprev<cr>")
+map("n", "<M-n>", ":lnext<cr>")
+map("n", "<M-p>", ":lprev<cr>")
 
-map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
+map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 map("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 map("n", "<leader>lr", "<cmd>LspRestart<cr>")
