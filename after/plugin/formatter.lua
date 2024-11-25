@@ -23,32 +23,32 @@ require("formatter").setup({
 		},
 
 		rust = {
-			require("formatter.filetype.rust").rustfmt,
+			require("formatter.filetypes.rust").rustfmt,
 		},
 
 		go = {
-			require("formatter.filetype.go").gofmt,
-			require("formatter.filetype.go").goimports,
+			require("formatter.filetypes.go").gofmt,
+			require("formatter.filetypes.go").goimports,
 		},
 
 		c = {
-			require("formatter.filetype.c").clangformat,
+			require("formatter.filetypes.c").clangformat,
 		},
 
         markdown = {
-            require("formatter.filetype.markdown").prettier,
+            require("formatter.filetypes.markdown").prettier,
         },
 
         yaml = {
-            require("formatter.filetype.yaml").prettier,
+            require("formatter.filetypes.yaml").prettier,
         },
 
         json = {
-            require("formatter.filetype.json").prettier,
+            require("formatter.filetypes.json").prettier,
         },
 
         sh = {
-            require("formatter.filetype.sh").shfmt,
+            require("formatter.filetypes.sh").shfmt,
         },
 
 		["*"] = {
