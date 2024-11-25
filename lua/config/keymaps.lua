@@ -61,4 +61,5 @@ map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], op
 map("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 map("n", "<leader>lr", "<cmd>LspRestart<cr>")
-map("n", "<leader>f", vim.lsp.buf.format)
+map("n", "<leader>f", vim.cmd.Format)
+map("n", "<leader>F", vim.cmd.FormatWrite)
