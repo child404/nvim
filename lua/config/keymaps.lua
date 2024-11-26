@@ -10,20 +10,23 @@ map("", ";", "l", opts)
 map("", "l", "k", opts)
 map("", "k", "j", opts)
 map("", "j", "h", opts)
+
+-- Easier backspace
 map("i", "<C-j>", "<BS>", opts)
 map("c", "<C-j>", "<BS>", opts)
-map("n", "<C-w>j", "<C-w>h", opts)
-map("n", "<C-w>k", "<C-w>j", opts)
-map("n", "<C-w>l", "<C-w>k", opts)
-map("n", "<C-w>;", "<C-w>l", opts)
 
--- Resize with arrows
-map("n", "<C-Down>", ":resize +3<cr>", opts)
-map("n", "<C-Up>", ":resize -3<cr>", opts)
-map("n", "<C-Right>", ":vertical resize +3<cr>", opts)
-map("n", "<C-Left>", ":vertical resize -3<cr>", opts)
+-- Easier window navigation
+map("n", "<C-j>", "<C-w>h", opts)
+map("n", "<C-k>", "<C-w>j", opts)
+map("n", "<C-l>", "<C-w>k", opts)
+map("n", "<C-;>", "<C-w>l", opts)
 
--- Easier buffer navigation
+-- Easier window resizing
+map("n", "<M-t>", ":resize +1<cr>", opts)
+map("n", "<M-s>", ":resize -1<cr>", opts)
+map("n", "<M-.>", ":vertical resize +5<cr>", opts)
+map("n", "<M-,>", ":vertical resize -5<cr>", opts)
+
 map("n", "<leader>bk", ":bdelete<cr>", opts)
 
 map("n", "<leader>pv", ":Ex<cr>", opts)
@@ -57,7 +60,3 @@ map("n", "<M-p>", ":lprev<cr>")
 
 map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 map("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
-
-map("n", "<leader>lr", "<cmd>LspRestart<cr>")
-map("n", "<leader>f", vim.cmd.Format)
-map("n", "<leader>F", vim.cmd.FormatWrite)
