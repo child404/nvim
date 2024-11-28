@@ -19,4 +19,4 @@ function GitBranch()
   return vim.b.gitsigns_head or ""
 end
 
-vim.o.statusline = "[%{v:lua.MyMode()}] <%{v:lua.GitBranch()}> %= %f %m %r %= %{v:lua.GitStatus()} %y[%l:%c]"
+vim.o.statusline = "[%{v:lua.MyMode()}] %{v:lua.GitBranch()} %= %f %m %r %= %{v:lua.GitStatus()} %y[%l:%c]"
