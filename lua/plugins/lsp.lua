@@ -11,6 +11,7 @@ return {
 		"L3MON4D3/LuaSnip",
 		"saadparwaiz1/cmp_luasnip",
 		"j-hui/fidget.nvim",
+        { "https://git.sr.ht/~whynothugo/lsp_lines.nvim" },
 	},
 
 	config = function()
@@ -91,11 +92,37 @@ return {
 				{ name = "luasnip" }, -- For luasnip users.
 			}, {
 				{ name = "buffer" },
+				{ name = "path" },
 			}),
 		})
 
+        -- `/` cmdline setup.
+        cmp.setup.cmdline('/', {
+            mapping = cmp.mapping.preset.cmdline(),
+            sources = {
+                { name = 'buffer' }
+            }
+        })
+
+        -- `:` cmdline setup.
+        cmp.setup.cmdline(':', {
+            mapping = cmp.mapping.preset.cmdline(),
+            sources = cmp.config.sources({
+                { name = 'path' }
+            }, {
+                {
+                    name = 'cmdline',
+                    option = {
+                        ignore_cmds = { 'Man', '!' }
+                    }
+                }
+            })
+        })
+
+        require("lsp_lines").setup()
 		vim.diagnostic.config({
-			-- update_in_insert = true,
+            virtual_text = true,
+            virtual_lines = false,
 			float = {
 				focusable = false,
 				style = "minimal",
@@ -105,5 +132,14 @@ return {
 				prefix = "",
 			},
 		})
+        vim.keymap.set("", "<leader>ll", function()
+            local config = vim.diagnostic.config() or {}
+            if config.virtual_text then
+                vim.diagnostic.config { virtual_text = false, virtual_lines = true }
+            else
+                vim.diagnostic.config { virtual_text = true, virtual_lines = false }
+            end
+        end, { desc = "Toggle lsp_lines" })
+
 	end,
 }
