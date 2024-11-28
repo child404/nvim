@@ -123,14 +123,6 @@ return {
 		vim.diagnostic.config({
             virtual_text = true,
             virtual_lines = false,
-			float = {
-				focusable = false,
-				style = "minimal",
-				border = "rounded",
-				source = "always",
-				header = "",
-				prefix = "",
-			},
 		})
         vim.keymap.set("", "<leader>ll", function()
             local config = vim.diagnostic.config() or {}
@@ -140,6 +132,5 @@ return {
                 vim.diagnostic.config { virtual_text = true, virtual_lines = false }
             end
         end, { desc = "Toggle lsp_lines" })
-
 	end,
 }
