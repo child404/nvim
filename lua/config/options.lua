@@ -1,8 +1,6 @@
 local opt = vim.opt
 
 local options = {
-	guicursor = "",
-
 	number = true, -- show line numbers
 	relativenumber = true, -- show relative line numbers
 
