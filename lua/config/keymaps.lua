@@ -43,9 +43,6 @@ map("n", "Y", "yg$", opts)
 map("n", "J", "mzJ`z", opts)
 
 map("x", "<leader>p", "\"_dP", opts)
-map("n", "<leader>y", "\"+y", opts)
-map("v", "<leader>y", "\"+y", opts)
-map("n", "<leader>Y", "\"+Y", opts)
 map("n", "<leader>d", "\"_d", opts)
 map("v", "<leader>d", "\"_d", opts)
 

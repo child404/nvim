@@ -36,6 +36,8 @@ local options = {
 	splitbelow = true, -- hsplit window opens at the bottom
 
 	mouse = "a", -- enable mouse everywhere
+
+    clipboard = "unnamedplus",
 }
 
 opt.isfname:append("@-@")
