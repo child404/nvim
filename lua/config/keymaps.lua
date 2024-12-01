@@ -30,10 +30,6 @@ map("n", "<M-,>", ":vertical resize -5<cr>", opts)
 map("n", "<leader>bk", ":bdelete<cr>", opts)
 
 map("n", "<leader>pv", ":Ex<cr>", opts)
-map("n", "<leader>qq", ":q<cr>", opts)
-map("n", "<leader>qw", ":qw<cr>", opts)
-map("n", "<leader>q1", ":q!<cr>", opts)
-map("n", "<leader>ww", ":w<cr>", opts)
 map("n", "<leader><leader>", ":so<cr>", opts)
 
 map("v", "K", ":m '>+1<cr>gv=gv", opts)
@@ -48,12 +44,10 @@ map("v", "<leader>d", "\"_d", opts)
 
 map("n", "Q", "<nop>", opts)
 
-map("n", "<C-f>", ":silent !tmux neww tmux-sessionizer<cr>", opts)
-
 map("n", "<C-n>", ":cnext<cr>")
 map("n", "<C-p>", ":cprev<cr>")
 map("n", "<M-n>", ":lnext<cr>")
 map("n", "<M-p>", ":lprev<cr>")
 
-map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+map("n", "<leader>sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 map("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
