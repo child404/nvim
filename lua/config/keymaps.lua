@@ -21,6 +21,11 @@ map("n", "<C-k>", "<C-w>j", opts)
 map("n", "<C-l>", "<C-w>k", opts)
 map("n", "<C-;>", "<C-w>l", opts)
 
+-- Tab navigation
+map("n", "<leader>tn", vim.cmd.tabnew)
+map("n", "<C-S-j>", vim.cmd.tabp)
+map("n", "<C-S-;>", vim.cmd.tabn)
+
 -- Easier window resizing
 map("n", "<M-t>", ":resize +1<cr>", opts)
 map("n", "<M-s>", ":resize -1<cr>", opts)
