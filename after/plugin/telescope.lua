@@ -1,4 +1,18 @@
+local opts = { nowait = true, silent = true }
 require("telescope").setup({
+	defaults = {
+		mappings = {
+			i = {
+				["<M-n>"] = require("telescope.actions").cycle_history_next,
+				["<M-p>"] = require("telescope.actions").cycle_history_prev,
+			},
+			n = {
+				["j"] = { "h", type = "command" },
+				["k"] = require("telescope.actions").move_selection_next,
+				["l"] = require("telescope.actions").move_selection_previous,
+			},
+		},
+	},
 	extensions = {
 		wrap_results = true,
 
