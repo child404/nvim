@@ -29,7 +29,6 @@ map("n", "<M-,>", ":vertical resize -5<cr>", opts)
 
 map("n", "<leader>bk", ":bnext | bdelete #<cr>", opts)
 
-map("n", "<leader>pv", ":Ex<cr>", opts)
 map("n", "<leader><leader>", ":so<cr>", opts)
 
 map("v", "K", ":m '>+1<cr>gv=gv", opts)

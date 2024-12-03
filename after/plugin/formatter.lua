@@ -43,6 +43,10 @@ require("formatter").setup({
             require("formatter.filetypes.yaml").prettier,
         },
 
+        toml = {
+            require("formatter.filetypes.toml").taplo,
+        },
+
         json = {
             require("formatter.filetypes.json").prettier,
         },

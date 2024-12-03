@@ -34,6 +34,9 @@ return {
 				"gopls",
 				"pyright",
 				"clangd",
+                "yamlls",
+                "marksman",
+                "taplo",
 			},
 			handlers = {
 				function(server_name) -- default handler (optional)
