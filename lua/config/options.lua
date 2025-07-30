@@ -1,6 +1,7 @@
 local opt = vim.opt
 
 local options = {
+    laststatus = 3,
 	number = true, -- show line numbers
 	relativenumber = true, -- show relative line numbers
 

@@ -6,11 +6,6 @@ require("telescope").setup({
 				["<M-n>"] = require("telescope.actions").cycle_history_next,
 				["<M-p>"] = require("telescope.actions").cycle_history_prev,
 			},
-			n = {
-				["j"] = { "h", type = "command" },
-				["k"] = require("telescope.actions").move_selection_next,
-				["l"] = require("telescope.actions").move_selection_previous,
-			},
 		},
 	},
 	extensions = {

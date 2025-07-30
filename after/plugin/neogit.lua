@@ -1,14 +1,4 @@
-require("neogit").setup({
-	mappings = {
-		status = {
-			["k"] = "MoveDown",
-			["l"] = "MoveUp",
-		},
-		popup = {
-			[";"] = "LogPopup",
-		},
-	},
-})
+require("neogit").setup()
 
 local map = vim.keymap.set
 

@@ -3,9 +3,19 @@ local barbecue_ui = require("barbecue.ui")
 
 require("barbecue").setup({
 	create_autocmd = false, -- prevent barbecue from updating itself automatically
+	exclude_filetypes = {
+		"netrw",
+		"toggleterm",
+		"NeogitCommitMessage",
+		"NeogitCommitView",
+		"NeogitDiffView",
+		"NeogitHelpPopup",
+		"NeogitLogPopup",
+		-- ...bunch more Neogit buffers
+	},
 	theme = {
 		separator = { fg = "#737aa2" },
-        dirname = { fg = "#737aa2" },
+		dirname = { fg = "#737aa2" },
 	},
 })
 

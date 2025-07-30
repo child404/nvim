@@ -12,6 +12,7 @@ map("n", "gD", vim.lsp.buf.declaration)
 map("n", "gT", vim.lsp.buf.type_definition)
 
 map("n", "<leader>lr", vim.lsp.buf.rename)
+map("n", "<leader>ld", vim.diagnostic.open_float)
 map("n", "<leader>lca", vim.lsp.buf.code_action)
 map("n", "<leader>lds", builtin.lsp_document_symbols)
 
