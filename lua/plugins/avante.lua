@@ -2,20 +2,22 @@ return {
 	"yetone/avante.nvim",
 	event = "VeryLazy",
 	version = false, -- Never set this value to "*"! Never!
-	opts = {
-		-- add any opts here
-		-- for example
-		provider = "openai",
-		openai = {
-			endpoint = "https://api.openai.com/v1",
-			model = "o4-mini", -- your desired model (or use gpt-4o, etc.)
-            api_key_name = "OPENAI_API_KEY",
-			timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
-			temperature = 0,
-			max_completion_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
-			reasoning_effort = "high", -- low|medium|high, only used for reasoning models
-		},
-	},
+    opts = {
+      providers = {
+        openai = {
+          endpoint = "https://api.openai.com/v1",
+          model = "o4-mini", -- your desired model
+          api_key_name = "OPENAI_API_KEY",
+          timeout = 30000,
+          extra_request_body = {
+              reasoning_effort = "high",
+              temperature = 0,
+              max_completion_tokens = 8192,
+          },
+        },
+      },
+      provider = "openai",
+    },
 	-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
 	build = "make",
 	-- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
